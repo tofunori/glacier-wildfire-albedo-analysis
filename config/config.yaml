@@ -1,0 +1,85 @@
+# Configuration principale du projet
+
+# Chemins des données
+data_paths:
+  raqdps: "data/raqdps/"
+  rgi: "data/rgi/RGI60-02.shp"
+  modis: "data/modis/"
+  sentinel2: "data/sentinel2/"
+  fire_data: "data/fires/"
+
+# Paramètres RAQDPS
+raqdps:
+  variables:
+    - BC_dep        # Dépôt de carbone noir
+    - PM2.5_dep     # Dépôt PM2.5
+    - PM10_dep      # Dépôt PM10
+    - OC_dep        # Carbone organique
+    - SO4_dep       # Sulfates
+    - dust_dep      # Poussière minérale
+  meteo_variables:
+    - t_2m          # Température à 2m
+    - rh_2m         # Humidité relative à 2m
+    - u_10m         # Vent zonal à 10m
+    - v_10m         # Vent méridional à 10m
+    - precip        # Précipitations
+    - pres_sfc      # Pression surface
+  resolution_km: 10
+  projection: "EPSG:4326"
+
+# Paramètres RGI
+rgi:
+  region: "02"  # Western Canada and US
+  min_area_km2: 1.0
+  attributes:
+    - RGIId
+    - Name
+    - Area
+    - Zmed
+    - Zmax
+    - Zmin
+    - CenLon
+    - CenLat
+    - Aspect
+
+# Paramètres d'analyse
+analysis:
+  cumulative_windows:
+    - 24H    # 24 heures
+    - 7D     # 7 jours
+    - 30D    # 30 jours
+  lag_days: [0, 1, 2, 3, 5, 7, 10]
+  buffer_distances_km: [50, 100, 200, 500]
+  
+# Glaciers d'intérêt spécifique
+glaciers_of_interest:
+  - name: "Athabasca Glacier"
+    rgi_id: "RGI60-02.11738"
+    lat: 52.185
+    lon: -117.252
+  - name: "Saskatchewan Glacier"
+    rgi_id: "RGI60-02.11739"
+    lat: 52.150
+    lon: -117.186
+  - name: "Columbia Glacier"
+    rgi_id: "RGI60-02.11740"
+    lat: 52.171
+    lon: -117.329
+  - name: "Peyto Glacier"
+    rgi_id: "RGI60-02.11693"
+    lat: 51.670
+    lon: -116.533
+
+# Paramètres de visualisation
+visualization:
+  figure_dpi: 300
+  figure_format: "png"
+  colormap_deposition: "YlOrRd"
+  colormap_albedo: "Blues_r"
+  
+# Paramètres de sortie
+output:
+  results_dir: "results/"
+  figures_dir: "figures/"
+  report_format: "html"  # ou "pdf"
+  save_intermediate: true
