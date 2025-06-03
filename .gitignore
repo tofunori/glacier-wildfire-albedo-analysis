@@ -1,0 +1,94 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Data files (too large for git)
+data/raqdps/
+data/rgi/*.shp
+data/rgi/*.shx
+data/rgi/*.dbf
+data/rgi/*.prj
+data/modis/
+data/sentinel2/
+data/fires/*.csv
+*.nc
+*.grib2
+*.hdf
+*.h5
+*.tif
+*.tiff
+
+# Results and figures
+results/
+figures/
+*.png
+*.jpg
+*.pdf
+*.html
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Configuration with sensitive data
+config/credentials.yaml
+.env
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+.cache/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Testing
+.tox/
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
+
+# Documentation builds
+docs/_build/
+docs/_static/
+docs/_templates/
